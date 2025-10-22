@@ -1,0 +1,94 @@
+/* ===== General style ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #111;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+/* ===== Header ===== */
+header {
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.2rem;
+}
+
+h2 {
+  font-weight: 400;
+  color: #aaa;
+  margin-top: 0;
+}
+
+/* ===== Gallery layout ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
+  padding: 2rem;
+  justify-items: center;
+}
+
+/* ===== Each card (image container) ===== */
+.card {
+  background-color: #1c1c1c;
+  border-radius: 16px;
+  padding: 1.5rem;           /* add margin-like padding so edges aren’t cropped */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 90%;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 25px rgba(255,255,255,0.1);
+}
+
+/* ===== Images ===== */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;        /* keep smooth corners */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.03);
+}
+
+/* ===== Lightbox (zoom view) ===== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.2);
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
