@@ -36,10 +36,10 @@ h2 {
 .card {
   background-color: #1c1c1c;
   border-radius: 16px;
-  padding: 1.5rem;           /* add margin-like padding so edges aren’t cropped */
+  padding: 4rem;           /* add margin-like padding so edges aren’t cropped */
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 90%;
+  max-width: 75%;
 }
 
 .card:hover {
@@ -92,3 +92,4 @@ h2 {
     padding: 1rem;
   }
 }
+
