@@ -49,7 +49,7 @@ h2 {
   width: 100%;               /* responsive width */
   max-width: 90%;            /* ensures map never exceeds card width */
   height: auto;
-  border-radius: 12px;       /* soft corners */
+  border-radius: 0px;       /* soft corners */
   margin: 8px;               /* white space so corners aren’t cropped */
   display: block;
   transition: transform 0.3s ease;
@@ -92,3 +92,4 @@ h2 {
     max-width: 95%;
   }
 }
+
