@@ -26,32 +26,31 @@ h2 {
 /* ===== Gallery layout ===== */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+  gap: 2rem;
   padding: 2rem;
-  justify-items: center;
+  justify-content: center;
 }
 
-/* ===== Each card (image container) ===== */
+/* ===== Each card ===== */
 .card {
   background-color: #1c1c1c;
-  border-radius: 16px;
-  padding: 15rem;           /* add margin-like padding so edges aren’t cropped */
+  border-radius: 16px;       /* rounded corners for shadow effect */
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 85%;
+  overflow: visible;         /* ensure image margin isn’t cropped */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 25px rgba(255,255,255,0.1);
-}
-
-/* ===== Images ===== */
+/* ===== Images inside the card ===== */
 .card img {
-  width: 100%;
+  width: 100%;               /* responsive width */
+  max-width: 90%;            /* ensures map never exceeds card width */
   height: auto;
-  border-radius: 12px;        /* keep smooth corners */
+  border-radius: 12px;       /* soft corners */
+  margin: 8px;               /* white space so corners aren’t cropped */
   display: block;
   transition: transform 0.3s ease;
 }
@@ -79,18 +78,17 @@ h2 {
   max-height: 90%;
   border-radius: 10px;
   box-shadow: 0 0 25px rgba(255,255,255,0.2);
+  cursor: zoom-out;
 }
 
 /* ===== Responsive tweaks ===== */
 @media (max-width: 768px) {
   .gallery {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
-  .card {
-    padding: 1rem;
+  .card img {
+    max-width: 95%;
   }
 }
-
-
