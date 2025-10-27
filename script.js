@@ -12,6 +12,7 @@ function checkVisibility() {
   });
 }
 
+
 window.addEventListener('scroll', checkVisibility);
 checkVisibility();
 
@@ -29,3 +30,4 @@ document.querySelectorAll('.gallery img').forEach(img => {
 lightbox.addEventListener('click', () => {
   lightbox.style.display = 'none';
 });
+
