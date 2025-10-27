@@ -23,6 +23,7 @@ h2 {
   margin-top: 0;
 }
 
+
 /* ===== Gallery layout ===== */
 .gallery {
   display: grid;
@@ -92,5 +93,6 @@ h2 {
     max-width: 95%;
   }
 }
+
 
 
