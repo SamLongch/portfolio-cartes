@@ -31,3 +31,22 @@ lightbox.addEventListener('click', () => {
   lightbox.style.display = 'none';
 });
 
+
+
+// ===== CV Menu Toggle (click-based, stable) =====
+const cvToggle = document.getElementById('cvToggle');
+const cvDropdown = document.getElementById('cvDropdown');
+
+cvToggle.addEventListener('click', (e) => {
+  e.stopPropagation();
+  cvDropdown.classList.toggle('active');
+});
+
+// Ferme le menu si on clique ailleurs
+document.addEventListener('click', (e) => {
+  if (!cvDropdown.contains(e.target) && e.target !== cvToggle) {
+    cvDropdown.classList.remove('active');
+  }
+});
+
+
