@@ -99,8 +99,7 @@ h2 {
 
 
 
-
-/* ===== CV Button (top-right corner, animated icon, bugfixed) ===== */
+/* ===== CV Button (top-right corner, JS-controlled dropdown) ===== */
 .cv-menu {
   position: fixed;
   top: 1.5rem;
@@ -126,26 +125,17 @@ h2 {
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-/* Animation douce sur le bouton */
+/* Animation du bouton */
 .cv-button:hover {
   background-color: #333;
   box-shadow: 0 0 12px rgba(255,255,255,0.1);
 }
 
-/* Effet “tremblement de feuille” sur l’icône 📄 */
-.cv-button:hover span::before {
+/* Effet de frémissement léger sur l’icône 📄 */
+.cv-button:hover {
   animation: paperWiggle 0.6s ease-in-out;
 }
 
-/* On transforme l’emoji en pseudo-élément pour mieux l’animer */
-.cv-button span::before {
-  content: "📄";
-  display: inline-block;
-  margin-right: 0.4rem;
-  transition: transform 0.3s ease;
-}
-
-/* Animation keyframes */
 @keyframes paperWiggle {
   0%   { transform: rotate(0deg); }
   20%  { transform: rotate(8deg); }
@@ -155,7 +145,7 @@ h2 {
   100% { transform: rotate(0deg); }
 }
 
-/* Dropdown collé au bouton */
+/* Menu caché par défaut */
 .cv-dropdown {
   position: absolute;
   top: 100%;
@@ -166,14 +156,14 @@ h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   overflow: hidden;
   opacity: 0;
-  transform: translateY(0);
+  transform: translateY(-5px);
   pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: all 0.25s ease;
   min-width: 200px;
 }
 
-/* Garde le menu visible tant que la souris est sur la zone */
-.cv-menu:hover .cv-dropdown {
+/* Apparition quand actif */
+.cv-dropdown.active {
   opacity: 1;
   transform: translateY(8px);
   pointer-events: auto;
