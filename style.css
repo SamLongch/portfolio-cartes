@@ -96,7 +96,7 @@ h2 {
 
 
 
-/* ===== CV Button (top-right corner) ===== */
+/* ===== CV Button (top-right corner, with dropdown animation) ===== */
 .cv-menu {
   position: fixed;
   top: 1.5rem;
@@ -113,6 +113,9 @@ h2 {
   cursor: pointer;
   font-size: 1rem;
   transition: background 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .cv-button:hover {
@@ -120,33 +123,40 @@ h2 {
   box-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
-/* ===== Dropdown menu ===== */
+/* Dropdown hidden by default */
 .cv-dropdown {
-  display: none;
   position: absolute;
-  top: 120%;
+  top: 110%;
   right: 0;
-  background-color: #222;
+  background-color: #1c1c1c;
+  border: 1px solid #444;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  min-width: 160px;
 }
 
+/* Keep dropdown visible when hovering over button OR dropdown */
+.cv-menu:hover .cv-dropdown,
+.cv-dropdown:hover {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Dropdown links */
 .cv-dropdown a {
   display: block;
   color: #f5f5f5;
   text-decoration: none;
-  padding: 0.6rem 1rem;
-  font-size: 0.95rem;
-  white-space: nowrap;
+  padding: 0.8rem 1rem;
+  transition: background 0.3s ease;
 }
 
 .cv-dropdown a:hover {
   background-color: #333;
 }
-
-/* Show dropdown on hover */
-.cv-menu:hover .cv-dropdown {
-  display: block;
-}
-
