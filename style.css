@@ -186,3 +186,18 @@ h2 {
   background-color: #333;
   padding-left: 1.2rem;
 }
+
+
+
+
+
+
+/* ===== Flag icons ===== */
+.flag-icon {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  object-fit: cover;
+  box-shadow: 0 0 2px rgba(255,255,255,0.4);
+}
+
