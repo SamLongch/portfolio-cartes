@@ -14,7 +14,7 @@ header {
 
 h1 {
   font-size: 2.2rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
 }
 
 h2 {
@@ -200,4 +200,5 @@ h2 {
   object-fit: cover;
   box-shadow: 0 0 2px rgba(255,255,255,0.4);
 }
+
 
