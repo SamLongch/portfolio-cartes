@@ -32,20 +32,24 @@ lightbox.addEventListener('click', () => {
 });
 
 
-
-// ===== CV Menu Toggle (click-based, stable) =====
+// ===== CV Menu (hover + click hybrid control) =====
+const cvMenu = document.getElementById('cvMenu');
 const cvToggle = document.getElementById('cvToggle');
 const cvDropdown = document.getElementById('cvDropdown');
 
+let dropdownVisible = false;
+
 cvToggle.addEventListener('click', (e) => {
   e.stopPropagation();
-  cvDropdown.classList.toggle('active');
+  dropdownVisible = !dropdownVisible;
+  cvDropdown.classList.toggle('active', dropdownVisible);
 });
 
 // Ferme le menu si on clique ailleurs
 document.addEventListener('click', (e) => {
-  if (!cvDropdown.contains(e.target) && e.target !== cvToggle) {
+  if (!cvMenu.contains(e.target)) {
     cvDropdown.classList.remove('active');
+    dropdownVisible = false;
   }
 });
 
